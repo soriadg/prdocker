@@ -4,10 +4,12 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends gcc libjpeg-dev && \
     rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
+WORKDIR /build
 
 COPY generate_image.c .
 
-RUN gcc -O2 -o generate_image generate_image.c -ljpeg
+RUN gcc -O2 -o /usr/local/bin/generate_image generate_image.c -ljpeg
 
-CMD ["./generate_image"]
+WORKDIR /output
+
+CMD ["generate_image"]
