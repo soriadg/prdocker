@@ -1,0 +1,9 @@
+$ docker build --no-cache -t c-image-generator .
+[+] Building 50.9s (11/11) FINISHED
+ => [2/6] RUN apt-get update && apt-get install -y --no-install-recommends gcc libjpeg-dev
+ => [4/6] COPY generate_image.c .
+ => [5/6] RUN gcc -O2 -o /usr/local/bin/generate_image generate_image.c -ljpeg
+ => exporting to image
+
+$ docker run --rm -v "$(pwd)/../output:/output" c-image-generator
+Generated output.jpg (800x600, 90% quality)
