@@ -1,4 +1,4 @@
-# Docker Activity
+# Docker 
 
 Este repositorio contiene dos contenedores Docker desarrollados como parte de la actividad de aprendizaje sobre Docker.
 
