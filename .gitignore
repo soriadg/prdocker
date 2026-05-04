@@ -2,10 +2,12 @@
 c-image-generator/generate_image
 *.o
 
-# generated images
+# generated images (but keep evidencia/)
 *.jpg
-*.png
 *.jpeg
+*.png
+!evidencia/*.png
+!evidencia/*.jpg
 
 # Python
 __pycache__/
