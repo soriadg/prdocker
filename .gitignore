@@ -1,23 +1,18 @@
-# compiled binaries
 c-image-generator/generate_image
 *.o
 
-# generated images (but keep evidencia/)
 *.jpg
 *.jpeg
 *.png
 !evidencia/*.png
 !evidencia/*.jpg
 
-# Python
 __pycache__/
 *.pyc
 *.pyo
 .env
 
-# OS
 .DS_Store
 Thumbs.db
 
-# Docker
 .dockerignore
