@@ -20,6 +20,31 @@ docker-activity/
 
 ---
 
+## Entorno utilizado
+
+Este proyecto se desarrolló en **Linux (Ubuntu)** usando **Docker Engine CLI** en lugar de Docker Desktop.
+
+### ¿Por qué Docker Engine CLI y no Docker Desktop?
+
+Docker Desktop es una aplicación con interfaz gráfica disponible principalmente para Windows y macOS. En Linux, Docker Desktop existe pero es opcional y requiere instalación adicional; la forma nativa y estándar de usar Docker es directamente mediante el **Docker Engine**, que se instala como servicio del sistema y se controla desde la terminal.
+
+| | Docker Desktop | Docker Engine CLI |
+|---|---|---|
+| Interfaz | Gráfica (GUI) | Terminal |
+| Disponibilidad en Linux | Opcional | Nativa |
+| Rendimiento | Capa de virtualización extra en Win/Mac | Corre directamente sobre el kernel |
+| Uso típico | Desarrollo en Windows/macOS | Servidores y Linux en general |
+
+En Linux, el motor de Docker corre directamente sobre el **kernel** del sistema operativo gracias a los namespaces y cgroups, sin necesidad de una máquina virtual intermedia. Esto lo hace más eficiente y es la opción preferida en entornos de producción y servidores.
+
+Para verificar la versión instalada:
+```bash
+docker --version
+# Docker version 29.4.2, build 055a478
+```
+
+---
+
 ## ¿Qué es Docker?
 
 Docker es una plataforma de **contenedores de software**. Un contenedor empaqueta el código de una aplicación junto con todas sus dependencias (librerías, configuración, sistema operativo base) en una unidad portable e independiente.
